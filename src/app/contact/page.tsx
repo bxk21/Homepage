@@ -28,7 +28,7 @@ export default function Contact() {
 					name="Phone"
 					link={<div className={clipboardClass}>
 						<Link href="tel:+17349850668" className={linkClass}>
-							(734)985-0668
+							(734) 985-0668
 						</Link>
 						<CopyToClipboard data="+17349850668"/>
 					</div>}
@@ -42,7 +42,7 @@ export default function Contact() {
 					name="Email"
 					link={<div className={clipboardClass}>
 						<Link href="mailto:kujile6@gmail.com" className={linkClass}>
-							Kujile6@gmail.com
+							kujile6@gmail.com
 						</Link>
 						<CopyToClipboard data="kujile6@gmail.com"/>
 					</div>}
