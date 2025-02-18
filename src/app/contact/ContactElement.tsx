@@ -2,7 +2,7 @@ import { JSX } from "react";
 
 export default function ContactElement({ icon, name, link }: { icon: JSX.Element, name: string, link: JSX.Element }){
 	return (
-		<li className="flex flex-row gap-2 items-center bg-[--accented-background] p-8 h-36 w-96">
+		<li className="flex flex-row gap-2 items-center bg-[--accented-background] p-8 h-36 w-80">
 			<div className="border border-[--altForeground] rounded-md p-4">
 				{icon}
 			</div>

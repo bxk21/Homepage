@@ -77,7 +77,7 @@ export default function Contact() {
 					/>}
 					name="Address"
 					link={<Link href="https://www.google.com/maps/place/Ann+Arbor,+MI+48105" className={linkClass}>
-						Ann Arbor, MI 48105 USA
+						Ann Arbor, MI 48105
 					</Link>}
 				/>
 			</ol>
