@@ -1,4 +1,6 @@
-export default function OneDriveIFrame({ link }: { link: string }) {
+import Link from "next/link";
+
+export default function OneDriveIFrame({ link, dlLink }: { link: string, dlLink?: string }) {
 	return (
 		<main className="size-full">
 			<iframe
@@ -8,7 +10,11 @@ export default function OneDriveIFrame({ link }: { link: string }) {
 			/>
 			<div className='w-full flex justify-between text-sm'>
 				<div/>
-				↑ Download
+				{dlLink ? <Link href={dlLink}>
+					Download
+				</Link> :
+					"↑ Download"
+				}
 			</div>
 		</main>
 	);

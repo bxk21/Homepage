@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 /* @custom-variant dark (&:where(.dark, .dark *)); */
 
@@ -12,12 +10,13 @@
 	--accented-background: light-dark(#797, #032);
 	--foreground: light-dark(#00521f, #aaa);
 	--altForeground: light-dark(#113814, #999);
-	--primary: light-dark(#00537F, #00537F);
+	--primary: light-dark(#00521f, #00521f);
 	--secondary: light-dark(#00537F, #00537F);
 	--success: #198754;
 	--warning: #ffc107;
 	--danger: #FF5353;
 	--info: #0dcaf0;
+	--highlight-gradient: to right, var(--accented-background), var(--primary) 10%, var(--primary) 90%, var(--accented-background);
 }
 
 /* If the browser prefers dark mode, apply these css settings */
