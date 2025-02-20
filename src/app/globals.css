@@ -6,17 +6,18 @@
 	color-scheme: light dark;
 	--color-scheme: light-dark(white, black);
 	--invert-scheme: light-dark(black, white);
-	--background: light-dark(#999, #021);
-	--accented-background: light-dark(#797, #032);
+	--background: light-dark(#eee, #021);
+	--accented-background: light-dark(#ccc, #032);
 	--foreground: light-dark(#00521f, #aaa);
 	--altForeground: light-dark(#113814, #999);
-	--primary: light-dark(#00521f, #00521f);
+	--primary: light-dark(#094, #0f7);
+	--accented-primary: light-dark(#090, #060);
 	--secondary: light-dark(#00537F, #00537F);
 	--success: #198754;
 	--warning: #ffc107;
 	--danger: #FF5353;
 	--info: #0dcaf0;
-	--highlight-gradient: to right, var(--accented-background), var(--primary) 10%, var(--primary) 90%, var(--accented-background);
+	--highlight-gradient: to right, var(--accented-background), var(--accented-primary) 10%, var(--accented-primary) 90%, var(--accented-background);
 }
 
 /* If the browser prefers dark mode, apply these css settings */
@@ -27,7 +28,7 @@
 } */
 
 body {
-	color: var(--foreground);
+	/* color: var(--invert-scheme); */
 	background: var(--background);
 	transition: background 1s;
 	font-family: Arial, Helvetica, sans-serif;
