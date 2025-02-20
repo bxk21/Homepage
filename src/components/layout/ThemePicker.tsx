@@ -61,7 +61,7 @@ export default function ThemePicker() {
 				Theme
 			</button>
 			<ul aria-labelledby="themes-menu-button"
-				className={`absolute p-1 -ml-1 border rounded-md bg-[--background] border-[--foreground]
+				className={`absolute p-1 -ml-1 border rounded-md bg-(--background) border-(--foreground)
 					-mt-8 transition ease-out transform ${showDropdown ? 'translate-y-8' : 'opacity-0 pointer-events-none'}`}
 			>
 				<li>
