@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import SideBar from "@/components/layout/Sidebar";
+import HideBar from "@/components/layout/Hidebar";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -26,13 +26,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
-				<div className='size-full flex'>
-					<SideBar/>
-					<div className="grid grid-rows-[20px_1fr_20px] min-h-screen h-full w-4/5 p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+				<div className='size-full flex flex-row'>
+					<HideBar/>
+					<div className="flex-col h-screen w-full p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
 						<Header/>
-							<div className='items-center justify-items-center'>
-								{children}
-							</div>
+						<div className='items-center justify-items-center'>
+							{children}
+						</div>
 						<Footer/>
 					</div>
 				</div>

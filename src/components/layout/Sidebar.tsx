@@ -6,7 +6,7 @@ const iconSize = 36;
 
 export default function SideBar() {
 	return (
-		<div className='flex flex-col w-1/5 bg-(--accented-background) border-(--altForeground) border rounded-md py-4 gap-4'>
+		<div className='size-full flex flex-col bg-(--accented-background) border border-(--altForeground) rounded-md py-4 gap-4'>
 			<div className="grid place-items-center px-4">
 				<Image
 					className="border-4 rounded-full"

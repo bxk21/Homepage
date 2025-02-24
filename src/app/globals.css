@@ -7,7 +7,7 @@
 	--color-scheme: light-dark(white, black);
 	--invert-scheme: light-dark(black, white);
 	--background: light-dark(#eee, #021);
-	--accented-background: light-dark(#ccc, #032);
+	--accented-background: light-dark(#c0d8c0, #032);
 	--foreground: light-dark(#00521f, #aaa);
 	--altForeground: light-dark(#113814, #999);
 	--primary: light-dark(#094, #0f7);
@@ -45,14 +45,6 @@ img:is(.grayscale) {
 	mix-blend-mode: difference;
 }
 
-/* slides the sidebar out if page is too small */
-@media screen and (max-width: 1200px) {
-  .sidebar-left {
-    transform: translateX(-100%);
-    z-index: 20;
-  }
-}
-
 @keyframes fadeInOutHold {
 	  0%	{ opacity:0; }
 	 35%	{ opacity:0; }
@@ -81,4 +73,13 @@ img:is(.grayscale) {
    -moz-animation: fadeInHoldOutHold 1s infinite;
    -o-animation: fadeInHoldOutHold 1s infinite; */
     animation: fadeOutInHold 4s infinite;
+}
+
+h1 {
+	font-size: x-large;
+	color: var(--primary);
+}
+
+h2 {
+	font-size: large;
 }

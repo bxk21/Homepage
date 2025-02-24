@@ -10,7 +10,11 @@ const linkClass = "flex items-center gap-2 hover:underline hover:underline-offse
 
 export default function Contact() {
 	return (
-		<main>
+		<main className="flex flex-col gap-8">
+			<h2>
+				Contact me any time! <br/>
+				For the fastest response, text me weekdays, 9am-5pm Eastern.
+			</h2>
 			<ol className="flex flex-wrap gap-8">
 				<ContactElement
 					icon={<div className="relative">
@@ -28,7 +32,7 @@ export default function Contact() {
 					name="Phone"
 					link={<div className={clipboardClass}>
 						<Link href="tel:+17349850668" className={linkClass}>
-							(734) 985-0668
+							+1 (734) 985-0668
 						</Link>
 						<CopyToClipboard data="+17349850668"/>
 					</div>}

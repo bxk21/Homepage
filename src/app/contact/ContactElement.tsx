@@ -7,12 +7,12 @@ export default function ContactElement({ icon, name, link }: { icon: JSX.Element
 				{icon}
 			</div>
 			<div className="flex flex-col gap-2 m-8 ml-0">
-				<div className="text-2xl text-(--primary)">
+				<h1>
 					{name}
-				</div>
-				<div className="text-xl">
+				</h1>
+				<h2>
 					{link}
-				</div>
+				</h2>
 			</div>
 		</li>
 	);
