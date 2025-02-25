@@ -18,6 +18,9 @@
 	--danger: #FF5353;
 	--info: #0dcaf0;
 	--highlight-gradient: to right, var(--accented-background), var(--accented-primary) 10%, var(--accented-primary) 90%, var(--accented-background);
+
+	--sidebar-width: 20rem;
+	--sidebar-width-hidden: 4rem;
 }
 
 /* If the browser prefers dark mode, apply these css settings */

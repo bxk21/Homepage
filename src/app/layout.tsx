@@ -30,9 +30,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 					<HideBar/>
 					<div className="flex-col h-screen w-full p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
 						<Header/>
-						<div className='items-center justify-items-center'>
-							{children}
-						</div>
+						{/* <div className='items-center justify-items-center size-full'> */}
+						{children}
+						{/* </div> */}
 						<Footer/>
 					</div>
 				</div>
