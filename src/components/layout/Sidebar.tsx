@@ -1,4 +1,4 @@
-import { IconFileCv, IconHome, IconMailbox, IconMenu3 } from "@tabler/icons-react";
+import { IconCode, IconFileCv, IconHome, IconMailbox, IconMenu3 } from "@tabler/icons-react";
 import Image from "next/image";
 import SidebarLink from "./SidebarLink";
 
@@ -6,8 +6,8 @@ const iconSize = 36;
 
 export default function SideBar() {
 	return (
-		<div className='size-full flex flex-col items-end lg:items-stretch bg-(--accented-background) border border-(--altForeground) rounded-md py-4 gap-4'>
-			<div className="lg:px-4 w-(--sidebar-width-hidden) lg:w-(--sidebar-width) transition-all duration-500">
+		<div className='size-full flex flex-col items-end lg:items-stretch bg-(--accented-background) border border-(--altForeground) rounded-md gap-4'>
+			<div className="lg:px-4 w-(--sidebar-width-hidden) lg:w-(--sidebar-width) transition-all duration-500 ease-in-out">
 				<Image
 					className="border-4 rounded-full"
 					src="/photos/side.jpg"
@@ -17,13 +17,19 @@ export default function SideBar() {
 					priority
 				/>
 			</div>
+			{/* <div className="flex flex-row justify-end lg:justify-center gap-2 text-3xl text-center px-4 transition-all duration-500 ease-in-out">
+				Bo
+				<div className="w-0 lg:w-auto opacity-0 lg:opacity-100 pointer-events-none transition-all duration-500 ease-in-out">
+					Kang
+				</div>
+			</div> */}
 			<div className="text-3xl text-center px-4 hidden lg:inline">
 				Bo Kang
 			</div>
 			<div className="text-3xl text-center px-4 lg:hidden">
 				Bo
 			</div>
-			<ol className="text-xl sm:text-left font-[family-name:var(--font-geist-mono)] flex flex-col gap-4">
+			<ol className="h-full text-xl sm:text-left font-[family-name:var(--font-geist-mono)] flex flex-col gap-4">
 				<SidebarLink
 					href="/"
 					icon={<IconHome
@@ -59,6 +65,16 @@ export default function SideBar() {
 						size={iconSize}
 					/>}>
 					About
+				</SidebarLink>
+				<SidebarLink
+					href="/thisSite"
+					icon={<IconCode
+						className='grayscale'
+						aria-label="Code icon"
+						size={iconSize}
+					/>}
+					className="mt-auto mb-1 lg:mb-8 transition-all duration-500 ease-in-out">
+					This Site
 				</SidebarLink>
 			</ol>
 		</div>

@@ -11,10 +11,12 @@ const linkClass = "flex items-center gap-2 hover:underline hover:underline-offse
 export default function Contact() {
 	return (
 		<main className="flex flex-col gap-8">
-			<h2>
-				Contact me any time! <br/>
-				For the fastest response, text me weekdays, 9am-5pm Eastern.
-			</h2>
+			<h1>
+				Contact me!
+			</h1>
+			<h3>
+				For the fastest response, text me weekdays 9am-5pm Eastern.
+			</h3>
 			<ol className="flex flex-wrap gap-8">
 				<ContactElement
 					icon={<div className="relative">

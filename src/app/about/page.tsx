@@ -1,5 +1,5 @@
 import ContactElement from "../contact/ContactElement";
-import { IconCertificate } from "@tabler/icons-react";
+import { IconBrandReact, IconCertificate, IconEPassport, IconIdBadge2 } from "@tabler/icons-react";
 import Link from "next/link";
 // import CopyToClipboard from "@/components/CopyToClipboard";
 
@@ -9,12 +9,15 @@ const linkClass = "flex items-center gap-2 hover:underline hover:underline-offse
 
 export default function AboutMe() {
 	return (
-		<main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+		<main className="flex flex-col gap-8 items-center sm:items-start">
+			<h1>
+				Credentials
+			</h1>
 			<ol className="flex flex-wrap gap-8">
 				<ContactElement
 					icon={<IconCertificate
 						className='grayscale'
-						aria-label="Email icon"
+						aria-label="Certificate icon"
 						size={iconSize}
 					/>}
 					name="CompTIA Security+ CE"
@@ -24,6 +27,70 @@ export default function AboutMe() {
 							Code: 4V4DK1TQY2E117SW <br/>
 							Expiration: 11/27/2027
 						</Link>
+					</div>}
+				/>
+				<ContactElement
+					icon={<IconIdBadge2
+						className='grayscale'
+						aria-label="ID Badge icon"
+						size={iconSize}
+					/>}
+					name="DoD Security Clearance"
+					link={<div className={clipboardClass}>
+						Secret Clearance
+					</div>}
+				/>
+				<ContactElement
+					icon={<IconEPassport
+						className='grayscale'
+						aria-label="Electronic Passport icon"
+						size={iconSize}
+					/>}
+					name="Citizenship"
+					link={<div className={clipboardClass}>
+						United States Citizen
+					</div>}
+				/>
+			</ol>
+			<h1>
+				Skills and Specializations
+			</h1>
+			<ol className="flex flex-wrap gap-8">
+				<ContactElement
+					icon={<IconBrandReact
+						className='grayscale'
+						aria-label="React icon"
+						size={iconSize}
+					/>}
+					name="React Development"
+					link={<div className={clipboardClass}>
+						<Link href="about/thisSite" className={linkClass}>
+							Criteria: SY0-701 <br/>
+							Code: 4V4DK1TQY2E117SW <br/>
+							Expiration: 11/27/2027
+						</Link>
+					</div>}
+				/>
+				<ContactElement
+					icon={<IconIdBadge2
+						className='grayscale'
+						aria-label="ID Badge icon"
+						size={iconSize}
+					/>}
+					name="DoD Security Clearance"
+					link={<div className={clipboardClass}>
+						Secret Clearance
+					</div>}
+				/>
+				<ContactElement
+					icon={<IconEPassport
+						className='grayscale'
+						aria-label="Electronic Passport icon"
+						size={iconSize}
+					/>}
+					name="Citizenship"
+					link={<div className={clipboardClass}>
+						United States Citizen
 					</div>}
 				/>
 			</ol>

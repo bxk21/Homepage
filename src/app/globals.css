@@ -18,9 +18,12 @@
 	--danger: #FF5353;
 	--info: #0dcaf0;
 	--highlight-gradient: to right, var(--accented-background), var(--accented-primary) 10%, var(--accented-primary) 90%, var(--accented-background);
+	--highlight-no-gradient: to right, var(--accented-background), var(--accented-primary) 10%, var(--accented-primary) 100%, var(--accented-background);
 
 	--sidebar-width: 20rem;
 	--sidebar-width-hidden: 4rem;
+
+	/* font-size: medium; */
 }
 
 /* If the browser prefers dark mode, apply these css settings */
@@ -79,10 +82,15 @@ img:is(.grayscale) {
 }
 
 h1 {
+	font-size: xx-large;
+	color: var(--foreground);
+}
+
+h2 {
 	font-size: x-large;
 	color: var(--primary);
 }
 
-h2 {
+h3 {
 	font-size: large;
 }
