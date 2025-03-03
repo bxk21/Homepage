@@ -6,7 +6,7 @@ import ContactElement from "./ContactElement";
 
 const iconSize = 36;
 const clipboardClass = "flex flex-row gap-2 items-center";
-const linkClass = "flex items-center gap-2 hover:underline hover:underline-offset-4";
+const linkClass = "hover:underline hover:underline-offset-4";
 
 export default function Contact() {
 	return (

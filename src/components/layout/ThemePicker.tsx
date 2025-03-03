@@ -52,8 +52,7 @@ export default function ThemePicker() {
 	return (
 		<div className='relative'>
 			<button
-				className='flex items-center gap-2 cursor-pointer'
-				// className='rounded-full border border-solid border-white/[.08] transition-colors flex items-center justify-center hover:bg-[#444444] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44'
+				className='flex gap-2 cursor-pointer'
 				aria-haspopup="menu"
 				onClick={() => setShowDropdown(!showDropdown)}
 			>
@@ -61,16 +60,16 @@ export default function ThemePicker() {
 				Theme
 			</button>
 			<ul aria-labelledby="themes-menu-button"
-				className={`absolute p-1 -ml-1 border rounded-md bg-(--background) border-(--foreground)
+				className={`absolute p-1 -ml-1 border rounded-md bg-(--background) border-(--invert-scheme)
 					-mt-8 transition ease-out transform ${showDropdown ? 'translate-y-8' : 'opacity-0 pointer-events-none'}`}
 			>
 				<li>
-					<button className='flex items-center gap-2 cursor-pointer' onClick={() => changeTheme(Theme.Light)}>
+					<button className='flex gap-2 cursor-pointer' onClick={() => changeTheme(Theme.Light)}>
 						{lightThemeIcon} Light
 					</button>
 				</li>
 				<li>
-					<button className='flex items-center gap-2 cursor-pointer' onClick={() => changeTheme(Theme.Dark)}>
+					<button className='flex gap-2 cursor-pointer' onClick={() => changeTheme(Theme.Dark)}>
 						{darkThemeIcon} Dark
 					</button>
 				</li>

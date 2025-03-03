@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Wife() {
 	return (
-		<main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+		<main className="flex flex-col">
 			<Link href="https://www.museye.net/">
 				<Image
 					src="/photos/muse.jpg"

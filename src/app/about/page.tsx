@@ -4,12 +4,12 @@ import Link from "next/link";
 // import CopyToClipboard from "@/components/CopyToClipboard";
 
 const iconSize = 36;
-const clipboardClass = "flex flex-row gap-2 items-center";
-const linkClass = "flex items-center gap-2 hover:underline hover:underline-offset-4";
+const clipboardClass = "flex flex-row gap-2";
+const linkClass = "hover:underline hover:underline-offset-4";
 
 export default function AboutMe() {
 	return (
-		<main className="flex flex-col gap-8 items-center sm:items-start">
+		<main className="flex flex-col gap-8">
 			<h1>
 				Credentials
 			</h1>

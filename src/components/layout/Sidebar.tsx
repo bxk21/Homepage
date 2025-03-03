@@ -6,7 +6,7 @@ const iconSize = 36;
 
 export default function SideBar() {
 	return (
-		<div className='overflow-y-auto overflow-x-hidden size-full flex flex-col items-end lg:items-stretch bg-(--accented-background) border border-(--altForeground) rounded-md gap-4'>
+		<div className='overflow-y-auto overflow-x-hidden size-full flex flex-col items-end lg:items-stretch bg-(--accented-background) border border-(--alt-foreground) rounded-md gap-4'>
 			<div className="lg:px-4 w-(--sidebar-width-hidden) lg:w-(--sidebar-width) transition-all duration-500 ease-in-out">
 				<Image
 					className="border-4 rounded-full"

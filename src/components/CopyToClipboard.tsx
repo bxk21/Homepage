@@ -5,7 +5,7 @@ export default function CopyToClipboard({ data, size, className }: { data: strin
 	return (
 		<div className={`flex gap-2 items-center relative ${className || ''}`}>
 			<button
-				className="peer"
+				className="peer cursor-pointer"
 				onClick={() => { navigator.clipboard.writeText(data); }}
 			>
 				<IconClipboardCopy
