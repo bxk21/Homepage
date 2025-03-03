@@ -73,7 +73,7 @@ export default function SideBar() {
 						aria-label="Code icon"
 						size={iconSize}
 					/>}
-					className="mt-auto mb-1 lg:mb-8 transition-all duration-500 ease-in-out">
+					className="mt-auto pb-3 lg:pb-2 lg:mb-8 transition-all duration-500 ease-in-out">
 					This Site
 				</SidebarLink>
 			</ol>

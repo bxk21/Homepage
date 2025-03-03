@@ -8,19 +8,18 @@ export default function SidebarLink({ href, icon, prefetch, className, children 
 	const isSelected = href.length === 1 ?
 		pathName === href :
 		pathName.startsWith(href);
-	const defaultClass = 'flex items-center justify-between gap-8 px-4 lg:px-12 py-2 transition-[padding] duration-500 ease-in-out '; // < Keep trailing space
+	const defaultClass = ' px-4 lg:px-12 py-2 transition-[padding] duration-500 ease-in-out '; // < Keep trailing space
 	const hoverClass = 'hover:underline hover:underline-offset-4 hover:bg-linear-(--highlight-gradient) hover:text-(--color-scheme)';
 	const selectedClass = 'bg-linear-(--highlight-gradient) text-(--color-scheme) bg-[2rem_0rem] lg:bg-center transition-[background-position] duration-500';
 
-	const linkClass = defaultClass + (isSelected ? selectedClass : hoverClass);
+	const listClass = (className || '') + defaultClass + (isSelected ? selectedClass : hoverClass);
+	const linkClass = 'flex items-center justify-between gap-8';
 
 	return (
-		<li className={className}>
+		<li className={listClass}>
 			<Link href={href} prefetch={prefetch} className={linkClass}>
 				{children}
-				<div className=''>
-					{icon}
-				</div>
+				{icon}
 			</Link>
 		</li>
 	);

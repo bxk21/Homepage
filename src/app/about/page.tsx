@@ -1,5 +1,5 @@
 import ContactElement from "../contact/ContactElement";
-import { IconBrandReact, IconCertificate, IconEPassport, IconIdBadge2 } from "@tabler/icons-react";
+import { IconBrandReact, IconBrandTypescript, IconCertificate, IconEPassport, IconIdBadge2 } from "@tabler/icons-react";
 import Link from "next/link";
 // import CopyToClipboard from "@/components/CopyToClipboard";
 
@@ -65,24 +65,22 @@ export default function AboutMe() {
 					name="React Development"
 					link={<div className={clipboardClass}>
 						<Link href="about/thisSite" className={linkClass}>
-							Criteria: SY0-701 <br/>
-							Code: 4V4DK1TQY2E117SW <br/>
-							Expiration: 11/27/2027
+							5 Years of Experience
 						</Link>
 					</div>}
 				/>
 				<ContactElement
-					icon={<IconIdBadge2
+					icon={<IconBrandTypescript
 						className='grayscale'
-						aria-label="ID Badge icon"
+						aria-label="Typescript Icon"
 						size={iconSize}
 					/>}
-					name="DoD Security Clearance"
+					name="Javascript / Typescript"
 					link={<div className={clipboardClass}>
-						Secret Clearance
+						6 Years of Experience
 					</div>}
 				/>
-				<ContactElement
+				{/* <ContactElement
 					icon={<IconEPassport
 						className='grayscale'
 						aria-label="Electronic Passport icon"
@@ -92,7 +90,7 @@ export default function AboutMe() {
 					link={<div className={clipboardClass}>
 						United States Citizen
 					</div>}
-				/>
+				/> */}
 			</ol>
 			<Link href="about/omgilovemywife">
 				*

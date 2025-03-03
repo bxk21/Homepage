@@ -44,8 +44,6 @@ export default function AboutThisSite() {
 				/>
 				{/* TODO:
 					reduced motion https://tailwindcss.com/docs/transition-property#supporting-reduced-motion
-					fix margins of bottom sidebar item
-					fix location of picture
 					fix transition of name
 				 */}
 			</ol>
