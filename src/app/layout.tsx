@@ -15,11 +15,6 @@ const geistMono = Geist_Mono({
 	subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-	title: "Bo Kang",
-	description: "Bo Kang's Portfolio",
-};
-
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
 	return (
 		<html lang="en">
@@ -38,3 +33,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 		</html>
 	);
 }
+
+export const metadata: Metadata = {
+	title: {
+		default: "Bo Kang's Portfolio",
+		template: "%s | Bo Kang"
+	},
+	description: "Bo Kang's Portfolio",
+};

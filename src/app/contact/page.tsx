@@ -1,8 +1,8 @@
+import ContactElement from "@/components/ContactElement";
 import CopyToClipboard from "@/components/CopyToClipboard";
-// import Image from "next/image";
 import Link from "next/link";
 import { IconPhone, IconMail, IconMessage, IconBrandLinkedin, IconBrandGithub, IconMapPin } from "@tabler/icons-react";
-import ContactElement from "./ContactElement";
+import { Metadata } from "next";
 
 const iconSize = 36;
 const clipboardClass = "flex flex-row gap-2 items-center";
@@ -90,3 +90,8 @@ export default function Contact() {
 		</main>
 	);
 }
+
+export const metadata: Metadata = {
+	title: "Contact Info",
+	description: "Contact Info and Links"
+};

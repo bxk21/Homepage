@@ -1,5 +1,6 @@
-import ContactElement from "../contact/ContactElement";
+import ContactElement from "@/components/ContactElement";
 import { IconBrandReact, IconBrandTypescript, IconCertificate, IconEPassport, IconIdBadge2 } from "@tabler/icons-react";
+import { Metadata } from "next";
 import Link from "next/link";
 // import CopyToClipboard from "@/components/CopyToClipboard";
 
@@ -37,7 +38,7 @@ export default function AboutMe() {
 					/>}
 					name="DoD Security Clearance"
 					link={<div className={clipboardClass}>
-						Secret Clearance
+						Confidential Clearance
 					</div>}
 				/>
 				<ContactElement
@@ -64,7 +65,7 @@ export default function AboutMe() {
 					/>}
 					name="React Development"
 					link={<div className={clipboardClass}>
-						<Link href="about/thisSite" className={linkClass}>
+						<Link href="thisSite" className={linkClass}>
 							5 Years of Experience
 						</Link>
 					</div>}
@@ -80,17 +81,6 @@ export default function AboutMe() {
 						6 Years of Experience
 					</div>}
 				/>
-				{/* <ContactElement
-					icon={<IconEPassport
-						className='grayscale'
-						aria-label="Electronic Passport icon"
-						size={iconSize}
-					/>}
-					name="Citizenship"
-					link={<div className={clipboardClass}>
-						United States Citizen
-					</div>}
-				/> */}
 			</ol>
 			<Link href="about/omgilovemywife">
 				*
@@ -98,3 +88,8 @@ export default function AboutMe() {
 		</main>
 	);
 }
+
+export const metadata: Metadata = {
+	title: "About",
+	description: "About Me"
+};

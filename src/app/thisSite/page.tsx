@@ -1,12 +1,13 @@
-import ContactElement from "@/app/contact/ContactElement";
+import ContactElement from "@/components/ContactElement";
 import { IconClipboardCopy, IconLayoutSidebar, IconMovie, IconSunMoon } from "@tabler/icons-react";
+import { Metadata } from "next";
 import Link from "next/link";
 
 export default function AboutThisSite() {
 	return (
 		<main className="flex flex-col gap-8">
 			<h1>
-				About this site
+				About this Site
 			</h1>
 			<h3>
 				This site is written in Typescript and built on Nextjs: Node, React, and TailwindCSS. <br/>
@@ -74,3 +75,8 @@ export default function AboutThisSite() {
 		</main>
 	);
 }
+
+export const metadata: Metadata = {
+	title: "About this Site",
+	description: "Features of this site"
+};
