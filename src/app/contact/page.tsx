@@ -32,7 +32,7 @@ export default function Contact() {
 						/>
 					</div>}
 					name="Phone"
-					link={<div className={clipboardClass}>
+					body={<div className={clipboardClass}>
 						<Link href="tel:+17349850668" className={linkClass}>
 							+1 (734) 985-0668
 						</Link>
@@ -46,7 +46,7 @@ export default function Contact() {
 						size={iconSize}
 					/>}
 					name="Email"
-					link={<div className={clipboardClass}>
+					body={<div className={clipboardClass}>
 						<Link href="mailto:kujile6@gmail.com" className={linkClass}>
 							kujile6@gmail.com
 						</Link>
@@ -60,7 +60,7 @@ export default function Contact() {
 						size={iconSize}
 					/>}
 					name="Linkedin"
-					link={<Link href="https://www.linkedin.com/in/bo-kang-6a5881b2/" className={linkClass}>
+					body={<Link href="https://www.linkedin.com/in/bo-kang-6a5881b2/" className={linkClass}>
 						Bo Kang
 					</Link>}
 				/>
@@ -71,7 +71,7 @@ export default function Contact() {
 						size={iconSize}
 					/>}
 					name="Github"
-					link={<Link href="https://github.com/bxk21/" className={linkClass}>
+					body={<Link href="https://github.com/bxk21/" className={linkClass}>
 						bxk21
 					</Link>}
 				/>
@@ -82,7 +82,7 @@ export default function Contact() {
 						size={iconSize}
 					/>}
 					name="Address"
-					link={<Link href="https://www.google.com/maps/place/Ann+Arbor,+MI+48105" className={linkClass}>
+					body={<Link href="https://www.google.com/maps/place/Ann+Arbor,+MI+48105" className={linkClass}>
 						Ann Arbor, MI 48105
 					</Link>}
 				/>
