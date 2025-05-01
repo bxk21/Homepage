@@ -91,7 +91,7 @@ export default function AboutMe() {
 					name="This Website"
 					href="thisSite"
 					body={<div>
-						<Link href="thisSite" className={linkClass}>
+						<Link href="https://github.com/bxk21/Homepage" className={linkClass}>
 							Github
 						</Link>
 					</div>}
