@@ -2,7 +2,14 @@ import { Url } from "next/dist/shared/lib/router/router";
 import Link from "next/link";
 import { JSX } from "react";
 
-export default function ContactElement({ icon, name, body, href }: { icon: JSX.Element, name: string, body?: JSX.Element, href?: Url }){
+type Props = {
+	icon: JSX.Element,
+	name: string,
+	body?: JSX.Element,
+	href?: Url
+};
+
+export default function ContactElement({ icon, name, body, href }: Props){
 	return (
 		<li className="flex flex-row gap-2 items-center bg-(--accented-background) min-h-36 min-w-96">
 			<div className="border border-(--alt-foreground) rounded-md p-4 m-8">
