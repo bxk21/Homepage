@@ -69,7 +69,7 @@ export default function AboutMe() {
 						</div>}
 						name="Javascript / Typescript"
 						body={<div>
-							7 Years of Experience
+							9 Years of Experience
 						</div>}
 					/>
 					<ContactElement
@@ -87,7 +87,7 @@ export default function AboutMe() {
 						</div>}
 						name="NodeJS / NextJS Development"
 						body={<div>
-							6 Years of Experience
+							8 Years of Experience
 						</div>}
 					/>
 					<ContactElement
@@ -105,7 +105,7 @@ export default function AboutMe() {
 						</div>}
 						name="React-Redux Development"
 						body={<div>
-							6 Years of Experience
+							8 Years of Experience
 						</div>}
 					/>
 					<ContactElement
@@ -123,7 +123,7 @@ export default function AboutMe() {
 						</div>}
 						name="CSS: SASS / Tailwind"
 						body={<div>
-							6 Years of Experience
+							8 Years of Experience
 						</div>}
 					/>
 				</ol>
@@ -139,7 +139,7 @@ export default function AboutMe() {
 						/>}
 						name="Java"
 						body={<div>
-							3 Years of Experience
+							5 Years of Experience
 						</div>}
 					/>
 					<ContactElement
@@ -150,7 +150,7 @@ export default function AboutMe() {
 						/>}
 						name="Spring Boot"
 						body={<div>
-							1 Year of Experience
+							3 Years of Experience
 						</div>}
 					/>
 					<ContactElement
@@ -168,7 +168,7 @@ export default function AboutMe() {
 						</div>}
 						name="AWS / GCP"
 						body={<div>
-							1 Year of Experience
+							3 Years of Experience
 						</div>}
 					/>
 				</ol>

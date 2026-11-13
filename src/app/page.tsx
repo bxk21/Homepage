@@ -11,7 +11,7 @@ export default function Home() {
 				Welcome to my portfolio.
 			</h3>
 			<h3>
-				I&apos;m a Fullstack Software Engineer with 7 years of experience. <br/>
+				I&apos;m a Fullstack Software Engineer with 9 years of experience. <br/>
 				I specialize in the Node-React-Redux tech stack, with experience in Java and APIs.
 			</h3>
 		</main>
