@@ -26,6 +26,16 @@
 	/* font-size: medium; */
 }
 
+/* The theme override must be a stylesheet color-scheme, not an inline style:
+   the build rewrites light-dark() into variables it only flips for color-scheme declarations it can see. */
+:root.light {
+	color-scheme: light;
+}
+
+:root.dark {
+	color-scheme: dark;
+}
+
 body {
 	background: var(--background);
 	transition: background 1s;

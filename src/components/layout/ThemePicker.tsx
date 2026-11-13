@@ -3,9 +3,9 @@ import { useState } from 'react';
 import { IconMoon, IconSun, IconSunMoon } from '@tabler/icons-react';
 
 enum Theme {
-	Default = 'light dark',
-	Light = 'light only',
-	Dark = 'dark only'
+	Default = 'default',
+	Light = 'light',
+	Dark = 'dark'
 }
 
 const defaultThemeIcon = <IconSunMoon
@@ -38,11 +38,10 @@ export default function ThemePicker() {
 		const newTheme: Theme = clickedTheme === theme ? Theme.Default : clickedTheme;
 		setTheme(newTheme);
 		setShowDropdown(false);
-		const systemTheme = window.matchMedia?.('(prefers-color-scheme: dark)').matches ? Theme.Dark : Theme.Light;
-		const newDisplayedTheme = newTheme === Theme.Default ? systemTheme : newTheme;
-		document.documentElement.style.setProperty('color-scheme', newTheme);
-		document.documentElement.classList.remove('dark', 'light');
-		document.documentElement.classList.add(newDisplayedTheme.split(' ')[0]);
+		document.documentElement.classList.remove(Theme.Light, Theme.Dark);
+		if (newTheme !== Theme.Default) {
+			document.documentElement.classList.add(newTheme);
+		}
 	}
 
 	return (
