@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { IconMoon, IconSun, IconSunMoon } from '@tabler/icons-react';
 
 enum Theme {
@@ -32,18 +32,14 @@ const themeIcons = {
 
 export default function ThemePicker() {
 	const [showDropdown, setShowDropdown] = useState(false);
-	const [initialTheme, setInitialTheme] = useState(Theme.Default);
 	const [theme, setTheme] = useState(Theme.Default);
-
-	useEffect(() => {
-		setInitialTheme(window.matchMedia?.('(prefers-color-scheme: dark)').matches ? Theme.Dark : Theme.Light);
-	}, []);
 
 	function changeTheme(clickedTheme: Theme) {
 		const newTheme: Theme = clickedTheme === theme ? Theme.Default : clickedTheme;
 		setTheme(newTheme);
 		setShowDropdown(false);
-		const newDisplayedTheme = newTheme === Theme.Default ? initialTheme : newTheme;
+		const systemTheme = window.matchMedia?.('(prefers-color-scheme: dark)').matches ? Theme.Dark : Theme.Light;
+		const newDisplayedTheme = newTheme === Theme.Default ? systemTheme : newTheme;
 		document.documentElement.style.setProperty('color-scheme', newTheme);
 		document.documentElement.classList.remove('dark', 'light');
 		document.documentElement.classList.add(newDisplayedTheme.split(' ')[0]);

@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { IconClipboardCopy } from "@tabler/icons-react";
 
 export default function CopyToClipboard({ data, size, className }: { data: string, size?: number, className?: string } ) {
