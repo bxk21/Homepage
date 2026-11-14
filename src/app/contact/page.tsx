@@ -82,8 +82,8 @@ export default function Contact() {
 						size={iconSize}
 					/>}
 					name="Address"
-					body={<Link href="https://www.google.com/maps/place/Ann+Arbor,+MI+48105" className={linkClass}>
-						Ann Arbor, MI 48105
+					body={<Link href="https://www.google.com/maps/place/Los+Angeles,+CA" className={linkClass}>
+						Los Angeles, CA
 					</Link>}
 				/>
 			</ol>

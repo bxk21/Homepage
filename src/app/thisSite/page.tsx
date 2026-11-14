@@ -1,5 +1,5 @@
 import ContactElement from "@/components/ContactElement";
-import { IconClipboardCopy, IconLayoutSidebar, IconMovie, IconSunMoon } from "@tabler/icons-react";
+import { IconClipboardCopy, IconLayoutSidebar, IconMovie, IconPalette, IconSunMoon } from "@tabler/icons-react";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -11,8 +11,9 @@ export default function AboutThisSite() {
 			</h1>
 			<h3>
 				This site is written in Typescript and built on Nextjs: Node, React, and TailwindCSS. <br/>
-				The code is hosted on <Link href={'https://github.com/bxk21/Homepage'} className="text-(--primary)">Github</Link>. <br/>
-				The page is built by <Link href={'https://vercel.com/bo-kangs-projects/homepage'} className="text-(--primary)">Vercel</Link>.
+				It&apos;s written with <Link href={'https://claude.com/claude-code'} className="text-(--accent)">Claude Code</Link>. <br/>
+				The code is hosted on <Link href={'https://github.com/bxk21/Homepage'} className="text-(--accent)">Github</Link>. <br/>
+				The page is built by <Link href={'https://vercel.com/bo-kangs-projects/homepage'} className="text-(--accent)">Vercel</Link>.
 			</h3>
 			<h1>
 				Custom Self Written Features
@@ -27,8 +28,20 @@ export default function AboutThisSite() {
 					name="Color Theme Picker"
 					body={<p>
 						Reads the user&apos;s default light/dark theme using <code>color-scheme: light dark;</code> <br/>
-						Dropdown menu animates fading in and out and clicks-through when hidden. <br/>
-						I&apos;m no UX designer, so apologies if the colors are ugly.
+						Switching themes reveals the new one in a circle growing from the button, using the View Transitions API. <br/>
+						Dropdown menu animates fading in and out and clicks-through when hidden.
+					</p>}
+				/>
+				<ContactElement
+					icon={<IconPalette
+						className='grayscale'
+						aria-label="Palette Icon"
+						size='20'
+					/>}
+					name="Color Palettes"
+					body={<p>
+						Four palettes, each with a light and a dark version, picked from the Palette menu. <br/>
+						Each palette is one block of CSS variables, and the menu&apos;s swatches preview a palette by applying that block to the swatch alone.
 					</p>}
 				/>
 				<ContactElement
@@ -40,7 +53,7 @@ export default function AboutThisSite() {
 					name="Hiding Sidebar"
 					body={<p>
 						On mobile devices or screens narrower than 64rem, the sidebar will animate and shrink down to an icon-only size. <br/>
-						The elements in the sidebar will adapt. My picture will shrink to fit. My last name will disappear. The icons will move closer to the right side. The highlighted background will lose its gradient.
+						The elements in the sidebar will adapt. My picture will shrink to fit. My last name will disappear. The icons will move closer to the right side.
 					</p>}
 				/>
 				<ContactElement
@@ -51,7 +64,7 @@ export default function AboutThisSite() {
 					/>}
 					name="Phone Number Animation"
 					body={<p>
-						On the <Link href="/contact" className="text-(--primary)">Contact Page</Link>&apos;s phone number section, the animated icon is actually two separate images keyframed to fade in and out at opposite timings.
+						On the <Link href="/contact" className="text-(--accent)">Contact Page</Link>&apos;s phone number section, the animated icon is actually two separate images keyframed to fade in and out at opposite timings.
 					</p>}
 				/>
 				<ContactElement
@@ -67,10 +80,7 @@ export default function AboutThisSite() {
 						So, I implemented a copy-to-clipboard button, that puts the link into the user&apos;s clipboard when used and displays instructions when hovered.
 					</p>}
 				/>
-				{/* TODO:
-					reduced motion https://tailwindcss.com/docs/transition-property#supporting-reduced-motion
-					fix transition of name
-				 */}
+				{/* TODO: fix transition of name */}
 			</ol>
 		</main>
 	);

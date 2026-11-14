@@ -1,10 +1,62 @@
 import ContactElement from "@/components/ContactElement";
-import { IconBowl, IconBrandAws, IconBrandJavascript, IconBrandNextjs, IconBrandNodejs, IconBrandReact, IconBrandRedux, IconBrandSass, IconBrandTailwind, IconBrandTypescript, IconCertificate, IconChessKnight, IconCloud, IconDatabase, IconEPassport, IconIdBadge2, IconPower, IconWebhook } from "@tabler/icons-react";
+import YearsOfExperience from "@/components/YearsOfExperience";
+import { Skill } from "@/lib/experience";
+import { Icon, IconBowl, IconBrandAws, IconBrandDocker, IconBrandJavascript, IconBrandMongodb, IconBrandNextjs, IconBrandNodejs, IconBrandPython, IconBrandReact, IconBrandRedux, IconBrandSass, IconBrandStorybook, IconBrandTailwind, IconBrandTypescript, IconCertificate, IconChessKnight, IconCloud, IconComponents, IconDatabase, IconEPassport, IconIdBadge2, IconMap2, IconPower, IconTestPipe, IconWebhook, IconWorldPin } from "@tabler/icons-react";
 import { Metadata } from "next";
 import Link from "next/link";
 
 const iconSize = 36;
 const linkClass = "hover:underline hover:underline-offset-4";
+
+// Two icons on one card take turns fading in and out.
+type SkillCard = { name: string, skill: Skill, icons: [Icon, string] | [Icon, string, Icon, string] };
+
+const frontendSkills: SkillCard[] = [
+	{ name: "Javascript / Typescript", skill: "javascript", icons: [IconBrandTypescript, "Typescript Icon", IconBrandJavascript, "Javascript Icon"] },
+	{ name: "NodeJS / NextJS / Express", skill: "node", icons: [IconBrandNodejs, "NodeJS Icon", IconBrandNextjs, "NextJS Icon"] },
+	{ name: "React: Redux / TanStack Query", skill: "react", icons: [IconBrandReact, "React Icon", IconBrandRedux, "Redux Icon"] },
+	{ name: "CSS: SASS / Tailwind", skill: "css", icons: [IconBrandTailwind, "Tailwind Icon", IconBrandSass, "Sass Icon"] },
+	{ name: "Material UI / MUI X", skill: "materialUi", icons: [IconComponents, "Components Icon"] },
+	{ name: "Maps: deck.gl / MapLibre / Google Maps", skill: "maps", icons: [IconMap2, "Map Icon", IconWorldPin, "Globe Pin Icon"] },
+	{ name: "Testing: Playwright / Jest / Storybook", skill: "testing", icons: [IconTestPipe, "Test Tube Icon", IconBrandStorybook, "Storybook Icon"] },
+];
+
+const backendSkills: SkillCard[] = [
+	{ name: "Python: FastAPI / Pydantic", skill: "python", icons: [IconBrandPython, "Python Icon"] },
+	{ name: "Java", skill: "java", icons: [IconBowl, "Bowl Icon"] },
+	{ name: "Spring Boot", skill: "springBoot", icons: [IconPower, "Power Icon"] },
+	{ name: "Databases: PostgreSQL / BigQuery / MongoDB / Redis", skill: "databases", icons: [IconDatabase, "Database Icon", IconBrandMongodb, "MongoDB Icon"] },
+	{ name: "GCP: Cloud Run / Pub/Sub / BigQuery · AWS: SES / SNS", skill: "cloud", icons: [IconCloud, "Cloud Icon", IconBrandAws, "AWS Icon"] },
+	{ name: "Docker", skill: "docker", icons: [IconBrandDocker, "Docker Icon"] },
+];
+
+function SkillIcons({ icons }: { icons: SkillCard['icons'] }) {
+	const [First, firstLabel, Second, secondLabel] = icons;
+	if (!Second) {
+		return <First className='grayscale' aria-label={firstLabel} size={iconSize}/>;
+	}
+	return <div className="relative">
+		<First className='grayscale fade-in-out' aria-label={firstLabel} size={iconSize}/>
+		<Second className='grayscale fade-out-in absolute top-0' aria-label={secondLabel} size={iconSize}/>
+	</div>;
+}
+
+function SkillList({ skills }: { skills: SkillCard[] }) {
+	return (
+		<ol className="flex flex-wrap gap-8">
+			{skills.map(({ name, skill, icons }) => (
+				<ContactElement
+					key={skill}
+					icon={<SkillIcons icons={icons}/>}
+					name={name}
+					body={<div>
+						<YearsOfExperience skill={skill} capitalize/> of Experience
+					</div>}
+				/>
+			))}
+		</ol>
+	);
+}
 
 export default function AboutMe() {
 	return (
@@ -53,125 +105,11 @@ export default function AboutMe() {
 			</section>
 			<section about="Skills - Frontend">
 				<h1> Skills - Frontend </h1>
-				<ol className="flex flex-wrap gap-8">
-					<ContactElement
-						icon={<div className="relative">
-							<IconBrandTypescript
-								className='grayscale fade-in-out'
-								aria-label="Typescript Icon"
-								size={iconSize}
-							/>
-							<IconBrandJavascript
-								className='grayscale fade-out-in absolute top-0'
-								aria-label="Javascript Icon"
-								size={iconSize}
-							/>
-						</div>}
-						name="Javascript / Typescript"
-						body={<div>
-							7 Years of Experience
-						</div>}
-					/>
-					<ContactElement
-						icon={<div className="relative">
-							<IconBrandNodejs
-								className='grayscale fade-in-out'
-								aria-label="React Icon"
-								size={iconSize}
-							/>
-							<IconBrandNextjs
-								className='grayscale fade-out-in absolute top-0'
-								aria-label="Redux Icon"
-								size={iconSize}
-							/>
-						</div>}
-						name="NodeJS / NextJS Development"
-						body={<div>
-							6 Years of Experience
-						</div>}
-					/>
-					<ContactElement
-						icon={<div className="relative">
-							<IconBrandReact
-								className='grayscale fade-in-out'
-								aria-label="React Icon"
-								size={iconSize}
-							/>
-							<IconBrandRedux
-								className='grayscale fade-out-in absolute top-0'
-								aria-label="Redux Icon"
-								size={iconSize}
-							/>
-						</div>}
-						name="React-Redux Development"
-						body={<div>
-							6 Years of Experience
-						</div>}
-					/>
-					<ContactElement
-						icon={<div className="relative">
-							<IconBrandTailwind
-								className='grayscale fade-in-out'
-								aria-label="Tailwind Icon"
-								size={iconSize}
-							/>
-							<IconBrandSass
-								className='grayscale fade-out-in absolute top-0'
-								aria-label="Sass Icon"
-								size={iconSize}
-							/>
-						</div>}
-						name="CSS: SASS / Tailwind"
-						body={<div>
-							6 Years of Experience
-						</div>}
-					/>
-				</ol>
+				<SkillList skills={frontendSkills}/>
 			</section>
 			<section about="Skills - Backend & Cloud">
 				<h1> Skills - Backend & Cloud </h1>
-				<ol className="flex flex-wrap gap-8">
-					<ContactElement
-						icon={<IconBowl
-							className='grayscale'
-							aria-label="Bowl Icon"
-							size={iconSize}
-						/>}
-						name="Java"
-						body={<div>
-							3 Years of Experience
-						</div>}
-					/>
-					<ContactElement
-						icon={<IconPower
-							className='grayscale'
-							aria-label="Cup Icon"
-							size={iconSize}
-						/>}
-						name="Spring Boot"
-						body={<div>
-							1 Year of Experience
-						</div>}
-					/>
-					<ContactElement
-						icon={<div className="relative">
-							<IconBrandAws
-								className='grayscale fade-in-out'
-								aria-label="AWS Icon"
-								size={iconSize}
-							/>
-							<IconCloud
-								className='grayscale fade-out-in absolute top-0'
-								aria-label="Cloud Icon"
-								size={iconSize}
-							/>
-						</div>}
-						name="AWS / GCP"
-						body={<div>
-							1 Year of Experience
-						</div>}
-					/>
-				</ol>
+				<SkillList skills={backendSkills}/>
 			</section>
 			<section about="Projects">
 				<h1> Projects </h1>
@@ -179,7 +117,7 @@ export default function AboutMe() {
 					<ContactElement
 						icon={<IconWebhook
 							className='grayscale'
-							aria-label="React icon"
+							aria-label="Webhook icon"
 							size={iconSize}
 						/>}
 						name="This Website"

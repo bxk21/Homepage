@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { IconClipboardCopy } from "@tabler/icons-react";
 
 export default function CopyToClipboard({ data, size, className }: { data: string, size?: number, className?: string } ) {
@@ -14,7 +14,7 @@ export default function CopyToClipboard({ data, size, className }: { data: strin
 					size={size || 24}
 				/>
 			</button>
-			<div className='text-xs w-max bg-(--accented-background) absolute p-1 left-full transition-opacity opacity-0 peer-hover:opacity-100'>
+			<div className='text-xs w-max bg-(--surface) border border-(--border) rounded-md absolute px-2 py-1 left-full transition-opacity opacity-0 peer-hover:opacity-100'>
 				Copy To Clipboard
 			</div>
 		</div>
