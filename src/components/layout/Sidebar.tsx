@@ -6,10 +6,10 @@ const iconSize = 36;
 
 export default function SideBar() {
 	return (
-		<div className='overflow-y-auto overflow-x-hidden size-full flex flex-col items-end lg:items-stretch bg-(--accented-background) border border-(--alt-foreground) rounded-md gap-4'>
-			<div className="lg:px-4 w-(--sidebar-width-hidden) lg:w-(--sidebar-width) transition-all duration-500 ease-in-out">
+		<div className='overflow-y-auto overflow-x-hidden size-full flex flex-col items-end lg:items-stretch bg-(--surface) border border-(--border) rounded-xl gap-4'>
+			<div className="lg:px-4 w-(--sidebar-width-hidden) lg:w-(--sidebar-width) transition-all duration-500 ease-in-out motion-reduce:transition-none">
 				<Image
-					className="border-4 rounded-full"
+					className="border-4 border-(--border) rounded-full"
 					src="/photos/side.jpg"
 					alt="Bo Kang"
 					width='1000'
@@ -33,7 +33,6 @@ export default function SideBar() {
 				<SidebarLink
 					href="/"
 					icon={<IconHome
-						className='grayscale'
 						aria-label="Home icon"
 						size={iconSize}
 					/>}>
@@ -42,7 +41,6 @@ export default function SideBar() {
 				<SidebarLink
 					href="/contact"
 					icon={<IconMailbox
-						className='grayscale'
 						aria-label="Mailbox icon"
 						size={iconSize}
 					/>}>
@@ -51,7 +49,6 @@ export default function SideBar() {
 				<SidebarLink
 					href="/resume" prefetch={true}
 					icon={<IconFileCv
-						className="grayscale"
 						aria-label="File CV icon"
 						size={iconSize}
 					/>}>
@@ -60,7 +57,6 @@ export default function SideBar() {
 				<SidebarLink
 					href="/about"
 					icon={<IconMenu3
-						className='grayscale'
 						aria-label="Menu icon"
 						size={iconSize}
 					/>}>
@@ -69,11 +65,10 @@ export default function SideBar() {
 				<SidebarLink
 					href="/thisSite"
 					icon={<IconCode
-						className='grayscale'
 						aria-label="Code icon"
 						size={iconSize}
 					/>}
-					className="mt-auto lg:mb-8 transition-all duration-500 ease-in-out"
+					className="mt-auto lg:mb-8 transition-all duration-500 ease-in-out motion-reduce:transition-none"
 					linkClassName="pb-3 lg:pb-2">
 					This Site
 				</SidebarLink>

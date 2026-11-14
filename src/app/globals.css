@@ -1,29 +1,50 @@
 @import "tailwindcss";
 
-/* @custom-variant dark (&:where(.dark, .dark *)); */
+/* Palettes: each is a light/dark pair, picked with data-palette on <html>. Paper is the default.
+   Selectors are not :root-only so the palette picker's swatches can preview each one in place. */
+:root,
+[data-palette="paper"] {
+	--bg: light-dark(#faf7f2, #171412);
+	--surface: light-dark(#f1ebe1, #221d19);
+	--border: light-dark(#e2d8ca, #362e28);
+	--text: light-dark(#1c1917, #ede6dc);
+	--muted: light-dark(#6b625a, #a39a90);
+	--accent: light-dark(#c2410c, #fb923c);
+}
+
+[data-palette="sage"] {
+	--bg: light-dark(#f4f6f1, #111612);
+	--surface: light-dark(#e7ece3, #1a211b);
+	--border: light-dark(#d3dccd, #2a352c);
+	--text: light-dark(#1f2a22, #e3e9e1);
+	--muted: light-dark(#5f6b62, #9aa69c);
+	--accent: light-dark(#2f7d55, #7cc49a);
+}
+
+[data-palette="ink"] {
+	--bg: light-dark(#fbfbfd, #0e0d12);
+	--surface: light-dark(#f0eff5, #18161f);
+	--border: light-dark(#dedce8, #2a2733);
+	--text: light-dark(#15131a, #ecebf2);
+	--muted: light-dark(#625e6e, #9d99aa);
+	--accent: light-dark(#6d28d9, #a78bfa);
+}
+
+[data-palette="slate"] {
+	--bg: light-dark(#f6f7f9, #12151a);
+	--surface: light-dark(#e9ecf1, #1b2028);
+	--border: light-dark(#d6dbe3, #2b323d);
+	--text: light-dark(#1b2230, #e6e9ef);
+	--muted: light-dark(#5d6675, #98a1b0);
+	--accent: light-dark(#c8432c, #ff8a73);
+}
 
 :root {
 	color-scheme: light dark;
-	--color-scheme: light-dark(white, black);
-	--invert-scheme: light-dark(black, white);
-	--background: light-dark(#eee, #021);
-	--accented-background: light-dark(#c0d8c0, #032);
-	--foreground: light-dark(#00521f, #090);
-	--alt-foreground: light-dark(#113814, #999);
-	--primary: light-dark(#094, #0f7);
-	--accented-primary: light-dark(#090, #060);
-	--secondary: light-dark(#00537F, #00537F);
-	--success: #198754;
-	--warning: #ffc107;
-	--danger: #FF5353;
-	--info: #0dcaf0;
-	--highlight-gradient: to right, var(--accented-background), var(--accented-primary) 10%, var(--accented-primary) 90%, var(--accented-background);
-	--highlight-no-gradient: to right, var(--accented-background), var(--accented-primary) 10%, var(--accented-primary) 100%, var(--accented-background);
+	--accent-soft: color-mix(in srgb, var(--accent) 14%, transparent);
 
 	--sidebar-width: 20rem;
 	--sidebar-width-hidden: 4rem;
-
-	/* font-size: medium; */
 }
 
 /* The theme override must be a stylesheet color-scheme, not an inline style:
@@ -36,9 +57,17 @@
 	color-scheme: dark;
 }
 
+/* Theme and palette changes are revealed by a View Transition clip-path animation (see lib/revealChange.ts),
+   so the default crossfade is switched off. */
+::view-transition-old(root),
+::view-transition-new(root) {
+	animation: none;
+	mix-blend-mode: normal;
+}
+
 body {
-	background: var(--background);
-	transition: background 1s;
+	background: var(--bg);
+	color: var(--text);
 	font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -59,10 +88,7 @@ img:is(.grayscale) {
 }
 
 .fade-in-out {
-   /* -webkit-animation: fadeInHoldOutHold 1s infinite;
-   -moz-animation: fadeInHoldOutHold 1s infinite;
-   -o-animation: fadeInHoldOutHold 1s infinite; */
-    animation: fadeInOutHold 4s infinite;
+	animation: fadeInOutHold 4s infinite;
 }
 
 @keyframes fadeOutInHold {
@@ -74,23 +100,23 @@ img:is(.grayscale) {
 }
 
 .fade-out-in {
-   /* -webkit-animation: fadeInHoldOutHold 1s infinite;
-   -moz-animation: fadeInHoldOutHold 1s infinite;
-   -o-animation: fadeInHoldOutHold 1s infinite; */
-    animation: fadeOutInHold 4s infinite;
+	animation: fadeOutInHold 4s infinite;
 }
 
 h1 {
-	font-size: xx-large;
-	color: var(--foreground);
+	font-size: 1.75rem;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	color: var(--text);
 }
 
 h2 {
-	font-size: x-large;
-	color: var(--primary);
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: var(--text);
 }
 
 h3 {
-	font-size: large;
-	color: var(--alt-foreground);
+	font-size: 1.05rem;
+	color: var(--muted);
 }

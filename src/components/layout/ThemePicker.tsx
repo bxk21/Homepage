@@ -1,6 +1,8 @@
 'use client';
 import { useState } from 'react';
 import { IconMoon, IconSun, IconSunMoon } from '@tabler/icons-react';
+import HeaderMenu from './HeaderMenu';
+import { revealChange } from '@/lib/revealChange';
 
 enum Theme {
 	Default = 'default',
@@ -8,67 +10,38 @@ enum Theme {
 	Dark = 'dark'
 }
 
-const defaultThemeIcon = <IconSunMoon
-	className='grayscale'
-	aria-label="Default Theme Icon"
-	size='20'
-/>;
-const lightThemeIcon = <IconSun
-	className='grayscale'
-	aria-label="Light Theme Icon"
-	size='20'
-/>;
-const darkThemeIcon = <IconMoon
-	className='grayscale'
-	aria-label="Dark Theme Icon"
-	size='20'
-/>;
-
 const themeIcons = {
-	[Theme.Default]: defaultThemeIcon,
-	[Theme.Light]: lightThemeIcon,
-	[Theme.Dark]: darkThemeIcon
+	[Theme.Default]: <IconSunMoon aria-label="Default Theme Icon" size='20'/>,
+	[Theme.Light]: <IconSun aria-label="Light Theme Icon" size='20'/>,
+	[Theme.Dark]: <IconMoon aria-label="Dark Theme Icon" size='20'/>
 };
 
 export default function ThemePicker() {
-	const [showDropdown, setShowDropdown] = useState(false);
 	const [theme, setTheme] = useState(Theme.Default);
 
-	function changeTheme(clickedTheme: Theme) {
+	function changeTheme(clickedTheme: Theme, origin: HTMLElement) {
+		// Picking the active theme again returns to the system default.
 		const newTheme: Theme = clickedTheme === theme ? Theme.Default : clickedTheme;
-		setTheme(newTheme);
-		setShowDropdown(false);
-		document.documentElement.classList.remove(Theme.Light, Theme.Dark);
-		if (newTheme !== Theme.Default) {
-			document.documentElement.classList.add(newTheme);
-		}
+		revealChange(origin, () => {
+			setTheme(newTheme);
+			document.documentElement.classList.remove(Theme.Light, Theme.Dark);
+			if (newTheme !== Theme.Default) {
+				document.documentElement.classList.add(newTheme);
+			}
+		});
 	}
 
 	return (
-		<div className='relative'>
-			<button
-				className='flex gap-2 cursor-pointer'
-				aria-haspopup="menu"
-				onClick={() => setShowDropdown(!showDropdown)}
-			>
-				{themeIcons[theme]}
-				Theme
-			</button>
-			<ul aria-labelledby="themes-menu-button"
-				className={`absolute p-1 -ml-1 border rounded-md bg-(--background) border-(--invert-scheme)
-					-mt-8 transition ease-out transform ${showDropdown ? 'translate-y-8' : 'opacity-0 pointer-events-none'}`}
-			>
-				<li>
-					<button className='flex gap-2 cursor-pointer' onClick={() => changeTheme(Theme.Light)}>
-						{lightThemeIcon} Light
-					</button>
-				</li>
-				<li>
-					<button className='flex gap-2 cursor-pointer' onClick={() => changeTheme(Theme.Dark)}>
-						{darkThemeIcon} Dark
-					</button>
-				</li>
-			</ul>
-		</div>
+		<HeaderMenu
+			label='Theme'
+			icon={themeIcons[theme]}
+			items={[Theme.Light, Theme.Dark].map(option => ({
+				key: option,
+				label: option === Theme.Light ? 'Light' : 'Dark',
+				icon: themeIcons[option],
+				selected: theme === option,
+				onSelect: origin => changeTheme(option, origin)
+			}))}
+		/>
 	);
 }
